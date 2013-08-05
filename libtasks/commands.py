@@ -28,10 +28,10 @@ class Directory(luigi.Task):
     name = luigi.Parameter(description='directory to create')
 
     def run(self):
-        os.makedirs(self.directory)
+        os.makedirs(self.name)
 
     def complete(self):
-        return os.path.exists(self.directory)
+        return os.path.exists(self.name)
 
 
 class Executable(luigi.Task):
