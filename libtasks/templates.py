@@ -42,6 +42,7 @@ import operator
 import pymarc
 import os
 import tempfile
+import requests
 
 
 
