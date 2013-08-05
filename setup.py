@@ -21,7 +21,7 @@ Topic :: Text Processing :: General
 """
 
 setup(name='libtasks',
-      version='0.0.1.2',
+      version='0.0.1.3',
       description='Reusable tasks and task templates for a library context.',
       long_description=__doc__,
       classifiers=filter(None, classifiers.split('\n')),
@@ -31,4 +31,4 @@ setup(name='libtasks',
       packages=['libtasks'],
       # run pip install numpy beforehand
       install_requires=['marcx>=0.1.7', 'luigi>=1.0.3', 'pymarc>=2.8', 
-                        'pandas>=0.12.0'])
+                        'pandas>=0.12.0', 'requests>=1.2.3'])
