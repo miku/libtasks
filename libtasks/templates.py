@@ -520,6 +520,23 @@ class MARCDDCList(MARCIDAttributeList):
     field = luigi.Parameter(default='082.a')
 
 
+class MARCRecordCount(luigi.Task):
+    """ Count the records in a MARC file. """
+    def requires(self):
+        raise NotImplementedError
+
+    def run(self):
+        with self.output().open('w') as output:
+            with self.input().open('r') as handle:
+                reader = pymarc.MARCReader(handle)
+                counter = 0
+                for _ in reader:
+                    counter += 1
+                output.write('%s\n' % (counter))
+
+    def output(self):
+        raise NotImplementedError
+
 class ConcatenateFiles(luigi.Task):
     """ Concatenate all inputs into one. 
     """

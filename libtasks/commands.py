@@ -143,7 +143,6 @@ class DownloadFile(luigi.Task):
 
     url = luigi.Parameter(description='URL to download')
     dst = luigi.Parameter(default=random_tmp_path())
-    verbose = luigi.BooleanParameter(default=False)
 
     def run(self):
         target = os.path.dirname(self.output().fn)
@@ -151,8 +150,6 @@ class DownloadFile(luigi.Task):
             os.makedirs(target)
         tmpfn, _ = urllib.urlretrieve(self.url)
         os.rename(tmpfn, self.output().fn)
-        if self.verbose:
-            print('Got %s > %s' % (self.url, self.output().fn))
 
     def output(self):
         return luigi.LocalTarget(self.dst)

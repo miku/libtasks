@@ -21,7 +21,7 @@ Topic :: Text Processing :: General
 """
 
 setup(name='libtasks',
-      version='0.0.1.4',
+      version='0.0.1.5',
       description='Reusable tasks and task templates for a library context.',
       long_description=__doc__,
       classifiers=filter(None, classifiers.split('\n')),
