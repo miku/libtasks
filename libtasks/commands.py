@@ -20,6 +20,7 @@ from subprocess import Popen, PIPE
 import datetime
 import luigi
 import os
+import urllib
 
 
 class Directory(luigi.Task):
@@ -151,7 +152,7 @@ class DownloadFile(luigi.Task):
         tmpfn, _ = urllib.urlretrieve(self.url)
         os.rename(tmpfn, self.output().fn)
         if self.verbose:
-            logger.debug('Got %s > %s' % (self.url, self.output().fn))
+            print('Got %s > %s' % (self.url, self.output().fn))
 
     def output(self):
         return luigi.LocalTarget(self.dst)
