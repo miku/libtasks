@@ -33,10 +33,7 @@ def random_tmp_path(delete=True):
     """ When `delete` is True, the runtime will try to 
     remove all remains of this file from the temporary directory.
     """
-    if delete:
-        prefix = TMP_PREFIX
-    else:
-        prefix = TMP_PREFIX_PERSISTENT
+    prefix = TMP_PREFIX if delete else TMP_PREFIX_PERSISTENT
     return os.path.join(tempfile.gettempdir(), '{}-{}'.format(
         prefix, random_string()))
 
