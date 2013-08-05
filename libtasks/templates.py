@@ -31,7 +31,7 @@ Overview:
 
 from nltk.tokenize import RegexpTokenizer
 from libtasks import xisbn
-from libtasks.fs import random_tmp_path, isolatedcopy
+from libtasks.fs import random_tmp_path, isolatedmove
 from libtasks.commands import Executable
 from itertools import izip
 from subprocess import Popen, PIPE

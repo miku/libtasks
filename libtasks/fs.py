@@ -2,12 +2,12 @@
 # coding: utf-8
 
 """
-Contains file related operations, especially `isolatedcopy`, which 
+Contains file related operations, especially `isolatedmove`, which
 will copy files or directories as atomic as possible.
 
 It is not atomic, because:
 
-* there's a tempfile left over if `isolatedcopy` is interrupted, although this
+* there's a tempfile left over if `isolatedmove` is interrupted, although this
   will be cleaned up via `cleanup_temporary_files` exit handler
 * some versions of Mac OS X comes with a broken `rename`, 
   see: http://www.weirdnet.nl/apple/rename.html
