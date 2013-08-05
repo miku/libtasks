@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+
+        
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="alternate" type="application/rdf+xml" title="RDF Representation" href="https://katalog.ub.uni-leipzig.de/Record/0000545771/RDF" />
+
+    <title>Exemplare: Algorithmen - eine Einführung /</title>
+
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="https://katalog.ub.uni-leipzig.de/Search/Results?lookfor=&amp;type=AllFields&amp;view=rss" />
+    <link rel="search" type="application/opensearchdescription+xml" title="Library Catalog Search" href="https://katalog.ub.uni-leipzig.de/Search/OpenSearch?method=describe" />
+
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="/vufind/interface/themes/finc_ubl/css/blueprint/screen.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="/vufind/interface/themes/finc_ubl/css/blueprint/print.css" />
+
+        <script type="text/javascript">
+    //<![CDATA[
+      var path = 'https://katalog.ub.uni-leipzig.de';
+    //]]>
+    </script>
+        <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/jquery.form.js"></script>
+        <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/jquery.tagsinput.min.js"></script>
+    
+        <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="https://katalog.ub.uni-leipzig.de/interface/themes/finc_ubl/js/jquery-ui-1.9.2.custom/css/smoothness/jquery-ui-1.9.2.custom.min.css" />
+
+        <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/lightbox.js"></script>
+
+        <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/common.js"></script>
+
+        
+    
+    
+            <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/jquery.qrcode.min.js"></script>
+        <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/jquery.qtip.min.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen" href="/vufind/interface/themes/finc_ubl/css/jquery.qtip.min.css" />
+        <script type="text/javascript">
+    
+    $(document).ready(function(){
+        $('.off_campus, .off_campus_detail').mouseover( function () {
+            var msg = 'Off-Campus Warning';
+            $.getJSON(path + '/AJAX/JSON?method=getTranslation', {"id": $(this).attr('id'), "str": msg}, function(response) {
+                    contextHelp.flash('#' + response.data.id, '10', '1', 'down', 'right', response.data.translation, 5000);
+            });
+        });
+    });
+    </script>
+            <link rel="stylesheet" type="text/css" media="screen, projection" href="/vufind/interface/themes/finc_ubl/css/styles.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="/vufind/interface/themes/finc_ubl/css/print.css" />
+    <!--[if lt IE 9]><link rel="stylesheet" href="https://katalog.ub.uni-leipzig.de/interface/themes/finc_ubl/css/ie8.css" type="text/css" media="screen, projection"><![endif]-->
+    <!--[if lt IE 8]><link rel="stylesheet" href="https://katalog.ub.uni-leipzig.de/interface/themes/finc/css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="shortcut icon" href="https://katalog.ub.uni-leipzig.de/interface/themes/finc/images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="container">
+	  <div class="header">
+		<script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/jquery.cookie.js"></script>
+<a id="logo" href="http://ub.uni-leipzig.de/">&nbsp;</a>
+
+    
+    <div id="topSearchBox" class="searchbox round-corners">
+                    <div class="searchform">
+      <form method="get" action="https://katalog.ub.uni-leipzig.de/Search/Results" name="searchForm" id="searchForm" class="search">
+      <label for="searchForm_lookfor" class="offscreen">Search Terms</label>
+      <input id="searchForm_lookfor" type="text" name="lookfor" size="36" value="" />
+      <label for="searchForm_type" class="offscreen">Search Type</label>
+      <select id="searchForm_type" name="type">
+              <option value="AllFields">Alle Felder</option>
+              <option value="Title">Titel</option>
+              <option value="Author">Person / Institution</option>
+              <option value="rvk_facet">RVK-Notation</option>
+              <option value="ISN">ISBN/ISSN/ISMN</option>
+              <option value="Signatur">Signatur</option>
+              <option value="Barcode">Barcode</option>
+              <option value="tag">Tag</option>
+            </select>
+      <!--<input type="submit" name="submit" value="Finden"/><br />-->
+      <input id="searchForm_searchButton" type="submit" name="SearchForm_submit" value="Finden"/><br />
+      <a href="https://katalog.ub.uni-leipzig.de/Search/Advanced" class="small">Erweitert</a>
+      <span style="text-align:right; color:#f09000; padding-left:20px; font-weight:bold;">Beta</span>
+
+
+                              <!-- ask for keeping filter rules on -->
+      <!--//-->
+                      </form>
+    <!-- autocomplete fix by tammikuu -->
+    <!-- @link https://github.com/KDK-Alli/NDL-VuFind/commit/8b1527ee43395bf5adf8fc53f3df2c82fdcf0ba5 -->
+    
+    <script type="text/javascript">
+        $("#searchForm_lookfor").focus();
+    </script>
+    
+        <!--<script type="text/javascript">$("#searchForm_lookfor").focus()</script>-->
+  </div>                </div>
+
+<div id="header-right">
+    <a id="unilogo" href="http://www.uni-leipzig.de/">&nbsp;</a>	
+    <div id="header-right-split">
+        <div class="header-right-split-left">
+                                                        <div id="logoutOptions" class="hide">
+                  <a class="account" href="/vufind/MyResearch/Home" title="Startseite"> </a> <br/>
+                  <a class="logout" href="/vufind/MyResearch/Logout" title="Abmelden">Abmelden</a>
+                </div>
+                                    <div id="loginOptions">
+                                          <a class="login" href="/vufind/MyResearch/Home">Mein Konto</a>
+                                        </div>
+                                    </div>
+    </div>
+</div>
+<div class="clear"></div>	  </div>
+
+	 <div id="header-navigation">
+        <div id="header-navigation-left">
+            <a href="http://ub.uni-leipzig.de/?id=1144" target="_blank">Feedback</a>
+        </div>
+        <div id="header-navigation-right">
+            
+            <span class="header-navigation-right-left">
+                <a class="split" href="https://katalog.ub.uni-leipzig.de/Search/Home" title="Startseite">Startseite</a>
+                <a class="split" href="http://ubdbs.ub.uni-leipzig.de/libero/WebOpac.cls" title="zum alten Katalog" target="_blank">zum alten Katalog</a>
+                <a class="split" href="http://blog.ub.uni-leipzig.de" title="Blog" target="_blank">Blog</a>
+            </span>
+
+                            <span class="header-navigation-right-right">
+                    <span id="chatscroll"></span>
+                    <script src="/chatswitch/jquery.Scroller-1.0.min.js" type="application/javascript"> </script>
+                    <script type="text/javascript">jQuery("#chatscroll").load("/chatswitch/katscroll.php");</script>
+                </span>
+
+                <span id="ublchathook"></span>
+                <script type="text/javascript">jQuery("#ublchathook").load("/chatswitch/katalog.php");</script>
+                    </div>
+     </div><!-- end header navigation -->
+
+    <div class="subnavigation">
+                  <div class="breadcrumbs">
+              <a href="https://katalog.ub.uni-leipzig.de">Start</a> <span>&rsaquo;</span>
+              <em>Algorithmen - eine...</em> <span>&rsaquo;</span>
+<em>Exemplare</em> 
+          </div>
+                <div class="language-select">
+            <form method="post" name="langForm" action="" id="langForm" style="float:right;margin-right:4px;">
+                <!--label for="langForm_mylang">Sprache:</label-->
+                <select id="langForm_mylang" name="mylang" class="jumpMenu">
+                                    <option value="en">Englisch</option>
+                                    <option value="de" selected="selected">Deutsch</option>
+                                </select>
+                <noscript><input type="submit" value="Ändern" /></noscript>
+            </form>
+        </div>
+    </div><!-- end subnavigation -->
+    <div class="main">
+                        <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/record.js"></script>
+<script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/check_save_statuses.js"></script>
+  <script type="text/javascript" src="/vufind/interface/themes/finc_ubl/js/preview.js"></script>
+<div>
+    </div>
+<div class="span-18">
+  <div class="toolbar">
+    <ul>
+      <li><a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Cite" class="citeRecord cite" id="citeRecord0000545771" title="Zitieren">Zitieren</a></li>
+      <!--<li><a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/SMS" class="smsRecord sms" id="smsRecord0000545771" title="SMS versenden">SMS versenden</a></li>-->
+      <li><a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Email" class="mailRecord mail" id="mailRecord0000545771" title="Als E-Mail versenden">Als E-Mail versenden</a></li>
+            <li>
+        <a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Export?style=RefWorks" class="export exportMenu">Exportieren</a>
+        <ul class="menu offscreen" id="exportMenu">
+                  <li><a target="RefWorksMain" href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Export?style=RefWorks">Exportieren nach RefWorks</a></li>
+                  <li><a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Export?style=EndNote">Exportieren nach Citavi / EndNote</a></li>
+                  <li><a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Export?style=MARC">Exportieren nach MARC</a></li>
+                  <li><a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Export?style=MARCXML">Exportieren nach MARCXML</a></li>
+                  <li><a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Export?style=RDF">Exportieren nach RDF</a></li>
+                  <li><a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Export?style=BibTeX">Exportieren nach BibTeX</a></li>
+                </ul>
+      </li>
+            <li><a href="https://katalog.ub.uni-leipzig.de/Print/QR?id=0000545771" class="qrCode" id="qrCode0000545771" title="QR-Code">QR-Code</a></li>
+      <li><a href="https://katalog.ub.uni-leipzig.de/Print/Printer?id=0000545771&type=ids&print=true" class="print" id="print0000545771" title="Drucken">Drucken</a></li>
+      <li id="saveLink"><a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Save" class="saveRecord sprite-icons24 not-favorit" id="saveRecord0000545771" title="Favoriten"><span class="txt">Favoriten</span></a>
+       </li>
+                </ul>
+        <div class="clear"></div>
+  </div>
+
+  <div class="record recordId" id="record0000545771">
+        
+    <div class="span-13">
+    <h1>
+  Algorithmen - eine Einführung  <br /> 
+    </h1>
+    
+  
+    <table cellpadding="2" cellspacing="0" border="0" class="citation" summary="Bibliographische Detailangaben">
+    
+    <!--//-->
+    
+    
+        <tr valign="top">
+      <th>Beteiligte: </th>
+      <td>
+                                                        <a href="https://katalog.ub.uni-leipzig.de/Author/Home?author=Cormen%2C%20Thomas%20H.">Cormen, Thomas H.  </a>                          </td>
+    </tr>
+    
+        <tr valign="top">
+        <th>Verfasserangabe: </th>
+        <td>
+                            von Thomas H. Cormen ...                    </td>
+    </tr>
+      
+
+    
+    <tr valign="top">
+      <th>Format: </th>
+      <td>
+                         <span class="iconlabel book">Buch</span>                    </td>
+    </tr>
+  
+        
+        <tr valign="top">
+      <th>veröffentlicht: </th>
+      <td>
+                  München : Oldenbourg-Verl., 2010<br/>
+              </td>
+    </tr>
+    
+        <tr valign="top">
+      <th>Umfang: </th>
+      <td>
+                  XX, 1319 S. : graph. Darst. ; 240 mm x 170 mm, 1869 gr.<br/>
+              </td>
+    </tr>
+        
+        <tr valign="top">
+        <th>Originaltitel: </th>
+        <td>
+                             <a title="Introduction to algorithms dt." href="https://katalog.ub.uni-leipzig.de/Search/Results?lookfor=%22Introduction%20to%20algorithms%20dt.%22&amp;type=Title" class="subjectHeading">Introduction to algorithms dt.</a>                    </td>
+    </tr>
+      
+
+      
+
+      
+
+        <tr valign="top">
+      <th>Ausgabe: </th>
+      <td>
+        3., überarb. und erw. Aufl.
+      </td>
+    </tr>
+    
+         
+        <tr valign="top">
+      <th>Schlagworte: </th>
+      <td>
+                        <div class="subjectLine">
+                                                        <a title=" Algorithms" href="https://katalog.ub.uni-leipzig.de/Search/Results?lookfor=%22Algorithms%22&amp;type=Subject" class="subjectHeading">Algorithms</a>
+                  </div>
+                
+                                <div class="subjectLine">
+                                                        <a title=" Datenstruktur" href="https://katalog.ub.uni-leipzig.de/Search/Results?lookfor=Datenstruktur" class="subjectHeading">Datenstruktur</a>
+                       &gt;                         <a title=" Datenstruktur Algorithmus" href="https://katalog.ub.uni-leipzig.de/Search/Results?lookfor=Datenstruktur%20Algorithmus" class="subjectHeading">Algorithmus</a>
+                       &gt;                         <a title=" Datenstruktur Algorithmus Lehrbuch" href="https://katalog.ub.uni-leipzig.de/Search/Results?lookfor=Datenstruktur%20Algorithmus%20Lehrbuch" class="subjectHeading">Lehrbuch</a>
+                  </div>
+                      </td>
+    </tr>
+    
+    <!--
+        <tr valign="top">
+      <th>Online Zugang: </th>
+      <td>
+                  <a href="http://deposit.d-nb.de/cgi-bin/dokserv?id=3492106&amp;prov=M&amp;dok%5Fvar=1&amp;dok%5Fext=htm">Inhaltstext</a><br/>
+                  <a href="http://digitool.hbz-nrw.de:1801/webclient/DeliveryManager?pid=3889699&amp;custom%5Fatt%5F2=simple%5Fviewer">Inhaltsverzeichnis</a><br/>
+                      </td>
+    </tr>
+     //-->
+
+    
+          <tr valign="top">
+      <th>RVK-Notation:</th>
+      <td>
+                  <span>
+         ST 134<a id="rvk_0" class="tooltip add rvk-link" href="https://katalog.ub.uni-leipzig.de/Search/Results?lookfor=%22ST%20134%22&amp;type=rvk">Ähnliche Treffer finden</a>
+          
+                     <ul class="tooltip-content rvk_0" style="display:none">
+                                        <li><strong>Algorithmen-, Komplexitätstheorie</strong></li>
+                      
+                                                          <li>Informatik</li>
+                                        <li>Monographien</li>
+                                        <li>Grundlagen der Informatik</li>
+                                        <li>Theoretische Informatik</li>
+                                        <li>Algorithmen-, Komplexitätstheorie</li>
+                                                </ul>
+                  </span>
+               </td>
+    </tr>
+        
+    
+    
+    <tr valign="top">
+      <th>Tags: </th>
+      <td>
+        <span style="float:right;">
+          <a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/AddTag" class="tool add tagRecord" title="Tag hinzufügen" id="tagRecord0000545771">Tag hinzufügen</a>
+        </span>
+        <div id="tagList">
+                      Keine Tags, Fügen Sie den ersten Tag hinzu!
+                  </div>
+      </td>
+    </tr>
+
+        
+  </table>
+  </div>
+
+<div class="core-right-col">
+    <div class="core-preview-cover">
+                        <img alt="Buchumschlag" class="no-recordcover" src="https://katalog.ub.uni-leipzig.de/bookcover.php?isn=3486590022&amp;size=medium"/>
+                    </div>
+
+    <div class="savedLists info hide" id="savedLists0000545771">
+    <strong>Gespeichert in:</strong>
+  </div>
+
+            <div class="previewDiv">
+        <a title="Preview from Google Books" class="hide previewGBS ISBN3486590022 OCLC659795864" target="_blank">
+          <img src="https://www.google.com/intl/en/googlebooks/images/gbs_preview_button1.png" alt="Preview"/>
+        </a>
+      </div>
+                  <div class="previewDiv">
+        <a title="Preview from HathiTrust" class="hide previewHT ISBN3486590022 OCLC659795864" target="_blank">
+          <img src="/vufind/images/preview_ht.gif" alt="Preview"/>
+        </a>
+      </div>
+        <span class="previewBibkeys ISBN3486590022 OCLC659795864"></span>
+  </div>
+<div class="clear"></div>
+  </div>
+
+  <div id="tabnav">
+    <ul>
+              <li class="active">
+            <a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Holdings#tabnav">Exemplare</a>
+        </li>
+                        <li>
+        <a id="getcontent-description" href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Description#tabnav">Details</a>
+      </li>
+            <li>
+        <a href="https://katalog.ub.uni-leipzig.de/Record/0000545771/UserComments#tabnav">Lesermeinungen</a>
+      </li>
+                        <li>
+        <a id="getcontent-details" href="https://katalog.ub.uni-leipzig.de/Record/0000545771/Details#tabnav">Internformat</a>
+      </li>
+    </ul>
+    <div class="clear"></div>
+    </div>
+
+
+  <div class="recordsubcontent">
+        
+    
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                                <div class="hdl"><h3>Online</h3></div>
+                <ul>
+                        <li><a href="http://deposit.d-nb.de/cgi-bin/dokserv?id=3492106&amp;prov=M&amp;dok%5Fvar=1&amp;dok%5Fext=htm" target="_blank">Inhaltstext</a></li>
+                        <li><a href="http://digitool.hbz-nrw.de:1801/webclient/DeliveryManager?pid=3889699&amp;custom%5Fatt%5F2=simple%5Fviewer" target="_blank">Inhaltsverzeichnis</a></li>
+                    </ul>
+                            
+<div class="hdl"><h3>Bibliothek</h3></div>
+
+<div class="holding">
+        <table>
+    <caption class="location-campusbibliothek">Campus-Bibliothek <span class="holding-expand-plus">&#43;</span></caption>
+    <colgroup>
+        <col class="holding-order" />
+        <col class="holding-status" />
+        <col class="holding-infos" />
+        <col class="holding-codes" />
+    </colgroup>
+    <tbody>
+                        <tr class='holding-row odd'>
+        <td  class="top">
+                                        <a class="input-disabled" href="#">Bestellen</a>
+                        </td>
+        <td  class="top">
+                                         <span class="available">Präsenz</span>
+                                </td>
+        <td class="top">
+            <span class="location-campusbibliothek">Standort: Freihand Informatik</span>        </td>
+        <td class="top">
+            <span>Signatur: <br />ST 134 C811 A3(3)</span><br />            <!--<span>Barcode: 0019521724</span>-->
+        </td>
+    </tr>
+    
+            <tr class='holding-row even'>
+        <td  class="top">
+                                        <a class="input-disabled" href="#">Bestellen</a>
+                        </td>
+        <td  class="top">
+                                         <span class="available">Handapparat, bitte wenden Sie sich an das Personal</span>
+                                </td>
+        <td class="top">
+                    </td>
+        <td class="top">
+            <span>Signatur: <br />ST 134 C811 A3(3)</span><br />            <!--<span>Barcode: 0018221827</span>-->
+        </td>
+    </tr>
+    
+        </tbody>
+    </table>
+    </div>
+
+  </div>
+
+    <span class="Z3988" title="ctx_ver=Z39.88-2004&amp;ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;rfr_id=info%3Asid%2Fhttp%3A%2F%2Fwww.ub.uni-leipzig.de%3Agenerator&amp;rft.date=2010&amp;rft.language=German&amp;rft.place=Mu%CC%88nchen+%3A&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Algorithmen+-+eine+Einfu%CC%88hrung+%2F&amp;rft_id=info%3Adoi%2F326463232&amp;btitle=Algorithmen+-+eine+Einfu%CC%88hrung+%2F&amp;isbn=9783486590029&amp;rft.au=&amp;rft.pub=Oldenbourg-Verl.%2C&amp;rft.edition=3.%2C+u%CC%88berarb.+und+erw.+Aufl.&amp;rft.isbn=3486590022"></span>
+</div>
+
+<!--<div class="span-5 last">
+  <div class="sidegroup">
+    <h4>Ähnliche Einträge</h4>
+          <p>Keine ähnlichen Titel gefunden</p>
+      </div>
+
+  </div>//-->
+<div id="resultSidebar" class="span-5 last">
+    <span class="similarItems" id="similarItems0000545771">
+        <div class="sidegroup"><img src="/vufind/interface/themes/finc_ubl/images/ajax_loading.gif"></img></div>
+    </span>
+</div>
+<div class="clear"></div>	  </div>
+
+	 <div class="footer">
+		<div class="span-5"><p><strong>Suchoptionen</strong></p>
+  <ul>
+    <li><a href="/vufind/Search/History">Suchverlauf</a></li>
+    <li><a href="/vufind/Search/Advanced">Erweiterte Suche</a></li>
+    <li><a href="/vufind/Search/Rvk">Sachliche Suche</a></li>
+    <li><a href="https://katalog.ub.uni-leipzig.de/Help/Home?topic=search" class="searchHelp">Suchtipps</a></li>
+  </ul>
+</div>
+<div class="span-5"><p><strong>Weitere Informationen</strong></p>
+  <ul>
+    <!--<li><a href="/vufind/Browse/Home">Katalog durchstöbern</a></li>-->
+    <!--<li><a href="/vufind/AlphaBrowse/Home">Alphabetisch durchstöbern</a></li>-->
+    <!--<li><a href="/vufind/Search/Reserves">Semesterapparat</a></li>-->
+    <!--<li><a href="/vufind/Search/NewItem">Neuerwerbung</a></li>-->
+    <li><a href="http://www.ub.uni-leipzig.de/service/erwerbungen/neuerwerbungslisten.html" target="_blank">Neuerwerbungen</a></li>
+    <li><a href="http://www.ub.uni-leipzig.de/service.html" target="_blank">Frage an die Bibliothek</a></li>
+    <li><a href="http://www.ub.uni-leipzig.de/site.php?page=allgemein/erwerbungsvorschlag&amp;lang=de&amp;stil=fc" target="_blank">Erwerbungsvorschlag</a></li>
+    </ul>
+</div>
+<div class="span-5 last"><p><strong>Fernleihe</strong></p>
+  <ul>
+    <li><a href="http://www.ub.uni-leipzig.de/service/fernleihe/hinweise-zur-fernleihe.html" target="_blank">Hinweise zur Fernleihe</a></li>
+    <li><a href="http://flportal.bsz-bw.de/jsp/start.jsp?sigel=15" target="_blank">Fernleihe</a></li>
+    <li><a href="http://flportal.bsz-bw.de/jsp/start.jsp?sigel=15/292" target="_blank">Fernleihe - Medizin</a></li>
+    <li><a href="http://www.ub.uni-leipzig.de/service/fernleihe/schnelllieferdienste.html" target="_blank">Dokumentenlieferdienst</a></li>
+    <li><a href="http://www.ub.uni-leipzig.de/ubl/standorte/medizin/fernleihe/lieferdienste-fernleihe.html" target="_blank">Dokumentenlieferdienst - Medizin</a></li>
+    
+    <!--<li><a href="#">Häufig gestellte Fragen</a></li>-->
+  </ul>
+</div>
+<hr />
+<div class="left">
+    <span>Powered by</span> <a href="http://www.vufind.org" title="vufind.org" target="_blank"><img src="/vufind/images/vufind-logo.png" alt="powered by VuFind - VuFind Logo"/></a>
+</div>
+<div class="finc-logo"><a href="http://blog.finc.info" title="finc Blog"><img src="/vufind/images/finc-logo.png" alt="powered by finc - finc Logo"/></a></div>
+<div class="right"><!--139.18.19.111&nbsp;&nbsp;|&nbsp;&nbsp;--><a href="http://www.ub.uni-leipzig.de/allgemein/impressum.html" target="_blank">Impressum</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.ub.uni-leipzig.de/allgemein/kontakt.html" target="_self">Kontakt</a>&nbsp;&nbsp;|&nbsp;&nbsp;&copy; Universitätsbibliothek Leipzig</div>
+<div class="clear"></div>
+	  </div>
+    </div>
+    <!-- Please make sure you DISABLE THIS tracking-code on development machines -->
+            <!-- Piwik -->
+        
+        <script type="text/javascript">
+        var pkBaseURL = (("https:" == document.location.protocol) ? "https://katalog.ub.uni-leipzig.de/piwik/" : "http://katalog.ub.uni-leipzig.de/piwik/");
+        document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+        </script><script type="text/javascript">
+        try {
+        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+        piwikTracker.trackPageView();
+        piwikTracker.enableLinkTracking();
+        } catch( err ) {}
+        </script><noscript><p><img src="http://katalog.ub.uni-leipzig.de/piwik/piwik.php?idsite=1" style="border:0" alt="katalog" /></p></noscript>
+        
+        <!-- End Piwik Tracking Code -->
+      </body>
+</html>
