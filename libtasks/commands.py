@@ -20,6 +20,7 @@ from subprocess import Popen, PIPE
 import datetime
 import hashlib
 import luigi
+import re
 import os
 import urllib
 
