@@ -23,6 +23,7 @@ import luigi
 import re
 import os
 import urllib
+import subprocess
 
 
 class Directory(luigi.Task):
