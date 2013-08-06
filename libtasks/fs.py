@@ -51,7 +51,7 @@ def cleanup_temporary_files():
             os.remove(path)
 
 
-atexit.register(cleanup_temporary_files)
+# atexit.register(cleanup_temporary_files)
 
 
 def touch(path):
@@ -89,15 +89,13 @@ def isolatedmove(src, dst):
     Poor man's atomicity. 
     Will overwrite any existing at `dst`.
     """
-    stopover = random_tmp_path(delete=False)
+    stopover = random_tmp_path()
+    parent = os.path.dirname(os.path.abspath(dst))
+    if not os.path.exists(parent):
+        os.makedirs(parent)    
     if os.path.isdir(src):
-        # copy a tree
         shutil.copytree(src, stopover)
-        parent = os.path.dirname(os.path.abspath(dst))
-        if not os.path.exists(parent):
-            os.makedirs(parent)
         os.rename(stopover, dst)
     else:
-        # copy a file
         shutil.copyfile(src, stopover)
         os.rename(stopover, dst)
