@@ -18,6 +18,7 @@ Overview:
 from libtasks.fs import random_tmp_path, which
 from subprocess import Popen, PIPE
 import datetime
+import hashlib
 import luigi
 import os
 import urllib
