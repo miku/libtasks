@@ -92,7 +92,7 @@ def isolatedmove(src, dst):
     Poor man's atomicity. 
     Will overwrite any existing at `dst`.
     """
-    stopover = random_tmp_path()
+    stopover = random_tmp_path(delete=False)
     if os.path.isdir(src):
         # copy a tree
         shutil.copytree(src, stopover)
